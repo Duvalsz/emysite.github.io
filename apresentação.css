@@ -1,49 +1,122 @@
-body{
-    color: white; /* Define a cor do texto como branco */
-    background-color: black; /* Define a cor de fundo da página como preto */
+/* Estilo global */
+body {
+    color: white;
+    background-color: black;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* Define uma lista de fontes para o texto, priorizando fontes do sistema e fontes amplamente suportadas */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-ul{
-    display: flex; /* Ativa o modelo flexbox para alinhar os itens da lista horizontalmente */
-    justify-content: space-between; /* Distribui os itens igualmente com espaço entre eles */
-    list-style-type: none; /* Remove os marcadores de lista (sem pontos ou números) */
-    align-items: center; /* Alinha os itens da lista verticalmente ao centro */
-    padding: 16px; /* Adiciona um espaçamento de 16px ao redor da lista */
-}
-
-a{
-    color: white; /* Define a cor dos links como branca */
-    text-decoration: none; /* Remove o sublinhado padrão dos links */
-}
-
-header img{
-    width: 220px; /* Define a largura da imagem do cabeçalho como 150px */
-    height: 220px; /* Define a altura da imagem do cabeçalho como 150px */
-    border-radius: 50%; /* Torna a imagem circular ao arredondar suas bordas em 50% */
-    border: 1px solid white; /* Adiciona uma borda rosa de 1px ao redor da imagem */
-}
-
-.center {
-    text-align: center; /* Centraliza o texto dentro do elemento */
-}
-
-h1{
-    color: white; /* Define a cor do título principal (h1) como rosa */
-    text-align: center;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Container geral */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
+}
+
+/* Estilos de links */
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: red; /* Animação hover nos links */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid white; /* Aumentei a espessura da borda */
+    transition: transform 0.3s ease; /* Efeito de zoom suave */
+}
+
+header img:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.5rem; /* Tamanho maior para destaque */
+    margin-top: 10px;
+}
+
+h2 {
+    color: #f39c12; /* Cor secundária */
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+
+/* Estilizando as seções */
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #f39c12;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6; /* Melhora a legibilidade do texto */
+    margin-bottom: 20px;
+}
+
+/* Estilizando as imagens */
+.imagem-plano, .imagem-resultados {
+    width: 100%;
+    max-width: 500px; /* Limita a largura máxima */
+    border: 5px solid white;
+    border-radius: 10px; /* Arredondando os cantos das imagens */
+    padding: 0px;
+    display: block;
+    margin: 20px auto; /* Centraliza e adiciona espaço ao redor */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Adiciona animação */
+}
+
+.imagem-plano:hover, .imagem-resultados:hover {
+    transform: scale(1.05); /* Zoom leve ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3); /* Sombra suave */
+}
+
+/* Botões */
+button {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e67e22; /* Altera a cor ao passar o mouse */
+    transform: scale(1.05); /* Efeito de zoom */
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #333; /* Cor de fundo mais escura para contraste */
+    color: white;
 }
 
 footer .social-links {
     display: flex;
-    gap: 20px; /* Espaço entre os ícones, ajuste conforme necessário */
+    justify-content: center;
+    gap: 20px;
 }
 
 footer a {
@@ -52,144 +125,136 @@ footer a {
     align-items: center;
     text-decoration: none;
     color: inherit;
+    transition: transform 0.3s ease;
+}
+
+footer a:hover {
+    transform: scale(1.1); /* Efeito de zoom nos ícones */
 }
 
 footer img {
-    width: 30px; /* Ajuste o tamanho conforme necessário */
+    width: 40px;
     height: auto;
+    margin-bottom: 5px;
 }
 
 footer p {
     margin: 5px 0;
-    font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-size: 14px;
 }
 
 footer .developer {
-    margin-top: 20px; /* Espaço acima do texto "Desenvolvido por Duval SZ" */
-    font-size: 12px; /* Tamanho da fonte para o texto de desenvolvimento */
-}
-
-
-.container{
-    padding: 0px 50px; /* Adiciona um espaçamento horizontal de 50px nas laterais do contêiner */
-}
-
-nav a:hover{
-    color: red; /* Muda a cor dos links para vermelho quando o cursor está sobre eles (hover) */
-}
-.imagem-plano, .imagem-resultados {
-    width: 500px;
-    border: 5px solid rgb(255, 255, 255); /* Borda branca sólida */
-    border-radius: 0px;    /* Sem arredondamento dos cantos */
-    padding: 0px;          /* Sem espaçamento interno */
-    display: block;        /* Garante que a imagem seja um bloco para centralização */
-    margin-left: auto;    /* Margem esquerda automática para centralizar */
-    margin-right: auto;   /* Margem direita automática para centralizar */
-}
-
-.imagem-resultados {
-    text-align: center;    /* Alinha o texto no centro, se necessário */
-}
-/* CSS Base - Aplica estilos gerais para todos os dispositivos */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    text-align: center;
-}
-
-header img {
-    width: 150px; /* Ajuste o tamanho da imagem do perfil conforme necessário */
-    height: auto;
-}
-
-h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
-}
-
-section {
-    margin: 20px 0;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-footer {
-    text-align: center;
     margin-top: 20px;
-}
-
-footer .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espaço entre os ícones */
-}
-
-footer img {
-    width: 30px; /* Ajuste o tamanho dos ícones conforme necessário */
-    height: auto;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-footer .developer {
-    margin-top: 10px;
     font-size: 12px;
 }
 
-/* Consultas de Mídia para dispositivos móveis */
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aplica a animação fadeIn ao conteúdo principal */
+section {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
     header img {
-        width: 100px; /* Reduz o tamanho da imagem do perfil em dispositivos móveis */
+        width: 150px;
     }
 
-    .container {
-        padding: 10px;
+    h1 {
+        font-size: 2rem;
     }
 
-    .social-links {
-        flex-direction: column;
-        gap: 10px; /* Reduz o espaço entre os ícones em dispositivos móveis */
+    h2 {
+        font-size: 1.5rem;
     }
 
-    footer .developer {
-        font-size: 10px; /* Ajusta o tamanho da fonte para dispositivos móveis */
+    .imagem-plano, .imagem-resultados {
+        max-width: 100%; /* Ocupa toda a largura disponível no mobile */
     }
 
-    section img {
-        width: 100%; /* Garante que as imagens se ajustem ao tamanho da tela */
+    footer img {
+        width: 30px;
     }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 24px; /* Ajusta o tamanho do título principal */
+    h1 {
+        font-size: 1.8rem;
     }
 
-    header h2 {
-        font-size: 18px; /* Ajusta o tamanho do subtítulo */
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 
     footer p {
-        font-size: 10px; /* Ajusta o tamanho da fonte dos parágrafos do rodapé */
+        font-size: 10px;
     }
 }
+/* Estilo do modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixa o modal na tela inteira */
+    z-index: 1000; /* Coloca o modal acima de outros elementos */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite rolagem se a imagem for grande */
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo preto semi-transparente */
+}
 
+/* Imagem dentro do modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
 
+/* Botão de fechar */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animação de zoom para a imagem */
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+}
