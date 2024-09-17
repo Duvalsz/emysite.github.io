@@ -76,7 +76,7 @@ p {
     max-width: 500px; /* Limita a largura máxima */
     border: 5px solid white;
     border-radius: 10px; /* Arredondando os cantos das imagens */
-    padding: 0px;
+    padding: 0;
     display: block;
     margin: 20px auto; /* Centraliza e adiciona espaço ao redor */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Adiciona animação */
@@ -208,6 +208,7 @@ section {
         font-size: 10px;
     }
 }
+
 /* Estilo do modal */
 .modal {
     display: none; /* Escondido por padrão */
